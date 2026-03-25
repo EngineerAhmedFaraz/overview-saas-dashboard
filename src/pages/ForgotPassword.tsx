@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -15,7 +15,6 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export default function ForgotPassword() {
-  const navigate = useNavigate();
   const { forgotPassword, isLoading, successMessage, error } = useAuthStore();
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({

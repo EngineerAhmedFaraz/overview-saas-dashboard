@@ -13,20 +13,20 @@ export default function Settings() {
   const [activeTab, setActiveTab] = useState('account');
 
   // Get theme state from store
-  const { theme, toggleTheme } = useThemeStore();
+  const { theme } = useThemeStore();
 
   // Function to set specific theme
-  const setTheme = (newTheme: 'light' | 'dark' | 'system') => {
-    if (newTheme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      document.documentElement.classList.toggle('dark', systemTheme === 'dark');
-      localStorage.setItem('theme', 'system');
-    } else {
-      document.documentElement.classList.toggle('dark', newTheme === 'dark');
-      localStorage.setItem('theme', newTheme);
-    }
-    // You can also update zustand if needed, but since toggleTheme exists, we can use it for light/dark
-  };
+  // const setTheme = (newTheme: 'light' | 'dark' | 'system') => {
+  //   if (newTheme === 'system') {
+  //     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  //     document.documentElement.classList.toggle('dark', systemTheme === 'dark');
+  //     localStorage.setItem('theme', 'system');
+  //   } else {
+  //     document.documentElement.classList.toggle('dark', newTheme === 'dark');
+  //     localStorage.setItem('theme', newTheme);
+  //   }
+  //   // You can also update zustand if needed, but since toggleTheme exists, we can use it for light/dark
+  // };
 
   return (
     <div className="space-y-6">
