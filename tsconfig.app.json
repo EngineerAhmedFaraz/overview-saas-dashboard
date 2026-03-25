@@ -23,7 +23,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "ignoreDeprecations": "6.0" // ← add this
+    "ignoreDeprecations": "5.0" // ← add this
   },
   "include": ["src"]
 }
